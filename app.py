@@ -9,11 +9,11 @@ st.title("ระบบพยากรณ์โรคเบาหวาน")
 st.subheader("ข้อมูลพื้นฐาน")
 
 # อายุ
-age = st.number_input("อายุ (ปี) (ถ้ามี)", min_value=0, max_value=120, value=None, placeholder="กรอกถ้ามี")
+age = st.number_input("อายุ (ปี) ", min_value=0, max_value=120, value=None, placeholder="กรอกถ้ามี")
 
 # น้ำหนัก/ส่วนสูง → BMI คำนวณเฉพาะเมื่อกรอกครบ
-weight = st.number_input("น้ำหนัก (kg) (ถ้ามี)", min_value=0.0, max_value=200.0, value=None, placeholder="กรอกถ้ามี")
-height = st.number_input("ส่วนสูง (cm) (ถ้ามี)", min_value=0.0, max_value=220.0, value=None, placeholder="กรอกถ้ามี")
+weight = st.number_input("น้ำหนัก (kg) ", min_value=0.0, max_value=200.0, value=None, placeholder="กรอกถ้ามี")
+height = st.number_input("ส่วนสูง (cm) ", min_value=0.0, max_value=220.0, value=None, placeholder="กรอกถ้ามี")
 
 if weight and height:
     bmi = weight / ((height/100)**2)
@@ -102,6 +102,7 @@ if st.button("คำนวณความเสี่ยง"):
         st.error(f"⚠ คุณมีความเสี่ยงสูงเป็นเบาหวาน ({prob*100:.2f}%)")
     else:
         st.success(f"คุณมีความเสี่ยงต่ำ ({prob*100:.2f}%)")
+
 
 
 
